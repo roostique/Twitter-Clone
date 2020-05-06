@@ -17,6 +17,7 @@
 		1230FEBB2461CDCC00213363 /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1230FEBA2461CDCC00213363 /* ExploreController.swift */; };
 		1230FEBD2461CDE700213363 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1230FEBC2461CDE700213363 /* NotificationsController.swift */; };
 		1230FEBF2461CDFE00213363 /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1230FEBE2461CDFE00213363 /* MessagesController.swift */; };
+		1230FEC32462D5AA00213363 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1230FEC22462D5AA00213363 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1230FEBA2461CDCC00213363 /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
 		1230FEBC2461CDE700213363 /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		1230FEBE2461CDFE00213363 /* MessagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
+		1230FEC22462D5AA00213363 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		12039EF32461978700BAD380 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1230FEC22462D5AA00213363 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1230FEBD2461CDE700213363 /* NotificationsController.swift in Sources */,
+				1230FEC32462D5AA00213363 /* Extensions.swift in Sources */,
 				12039EE02461971A00BAD380 /* AppDelegate.swift in Sources */,
 				1230FEBB2461CDCC00213363 /* ExploreController.swift in Sources */,
 				1230FEBF2461CDFE00213363 /* MessagesController.swift in Sources */,
