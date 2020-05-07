@@ -11,7 +11,15 @@ import Firebase
 
 class MainTabController: UITabBarController {
 
-    // MARK: - properties
+    var user: User? {
+        didSet {
+            guard let nav = viewControllers?[0] as? UINavigationController else { return }
+            guard let feed = nav.viewControllers.first as? FeedController else { return }
+            
+            feed.user = user
+        }
+    }
+    
     let actionButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.tintColor = .white
@@ -21,7 +29,6 @@ class MainTabController: UITabBarController {
         return btn
     }()
     
-    // MARK: - lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +38,9 @@ class MainTabController: UITabBarController {
     }
     
     func fetchUser() {
-        UserService.shared.fetchUser()
+        UserService.shared.fetchUser { user in
+            self.user = user
+        }
     }
     
     func authenticateUserConfigureUI() {
@@ -61,7 +70,6 @@ class MainTabController: UITabBarController {
         print("test")
     }
     
-    // MARK: - helpers
     func configureUI() {
         view.addSubview(actionButton)
         actionButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingBottom: 64, paddingRight: 16, width: 52, height: 52)

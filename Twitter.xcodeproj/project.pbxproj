@@ -26,6 +26,7 @@
 		12512CCF24643AC500CF77BF /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12512CCE24643AC500CF77BF /* AuthService.swift */; };
 		12512CD1246442BB00CF77BF /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12512CD0246442BB00CF77BF /* AuthData.swift */; };
 		12EEF30F24649FC10027C2AF /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EEF30E24649FC10027C2AF /* UserService.swift */; };
+		12EEF3112464AC190027C2AF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EEF3102464AC190027C2AF /* User.swift */; };
 		44F7A4E51F908E6E735B8600 /* Pods_Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD955DE018903505FD924CB /* Pods_Twitter.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		12512CCE24643AC500CF77BF /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		12512CD0246442BB00CF77BF /* AuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
 		12EEF30E24649FC10027C2AF /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		12EEF3102464AC190027C2AF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9FD955DE018903505FD924CB /* Pods_Twitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5DA9FF055D50F4C0F0E6B1 /* Pods-Twitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.debug.xcconfig"; path = "Target Support Files/Pods-Twitter/Pods-Twitter.debug.xcconfig"; sourceTree = "<group>"; };
 		D9D2D0D5B72D49D5AF1F2CE1 /* Pods-Twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.release.xcconfig"; path = "Target Support Files/Pods-Twitter/Pods-Twitter.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		12039EF82461979B00BAD380 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				12EEF3102464AC190027C2AF /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				1230FEC32462D5AA00213363 /* Extensions.swift in Sources */,
 				1230FECA246324B300213363 /* Utilities.swift in Sources */,
 				12512CD1246442BB00CF77BF /* AuthData.swift in Sources */,
+				12EEF3112464AC190027C2AF /* User.swift in Sources */,
 				12039EE02461971A00BAD380 /* AppDelegate.swift in Sources */,
 				1230FEBB2461CDCC00213363 /* ExploreController.swift in Sources */,
 				1230FEC6246317C800213363 /* LoginController.swift in Sources */,
