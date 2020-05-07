@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpController: UIViewController {
     
     private let imagePicker = UIImagePickerController()
+    private var profileImage: UIImage?
     
     private let addPhotoButton: UIButton = {
         let btn = UIButton(type: .system)
@@ -66,7 +68,6 @@ class SignUpController: UIViewController {
     
     private let usernameTextField: UITextField = {
         let txt = Utilities().textField(withPlaceholder: "Username")
-        txt.isSecureTextEntry = true
         return txt
     }()
     
@@ -99,12 +100,31 @@ class SignUpController: UIViewController {
     }
     
     @objc func handleSignUp() {
-        print("sign up")
-    }
+        
+        guard let profileImage = profileImage else {
+            print("DEBUG: Please select profile image")
+            return
+        }
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullname = fullnameTextField.text else { return }
+        guard let username = usernameTextField.text else { return }
+        
+        let credentials = AuthData(email: email, password: password, fullname: fullname,
+                                   username: username, profileImage: profileImage)
+        
+        AuthService.shared.signUpUser(credentials: credentials) { (error, ref) in
+            print("DEBUG: sign up success")
+            print("DEBUG: blah blah")
+        }
+        
+        
+}
     
     @objc func handleShowLogIn() {
         navigationController?.popViewController(animated: true)
     }
+    
     func configureUI() {
         view.backgroundColor = .twitterBlue
         
@@ -138,10 +158,17 @@ class SignUpController: UIViewController {
     }
 }
 
+
+
+
+
+
+
 extension SignUpController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo
         info: [UIImagePickerController.InfoKey : Any]) {
         guard let profileImage = info[.editedImage] as? UIImage else { return }
+        self.profileImage = profileImage
         
         addPhotoButton.layer.cornerRadius = 128 / 2
         addPhotoButton.layer.masksToBounds = true
