@@ -114,12 +114,16 @@ class SignUpController: UIViewController {
                                    username: username, profileImage: profileImage)
         
         AuthService.shared.signUpUser(credentials: credentials) { (error, ref) in
-            print("DEBUG: sign up success")
-            print("DEBUG: blah blah")
+            guard let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow}) else { return }
+            guard let tab = window.rootViewController as? MainTabController else { return }
+            
+            tab.authenticateUserConfigureUI()
+            
+            self.dismiss(animated: true, completion: nil)
         }
         
         
-}
+    }
     
     @objc func handleShowLogIn() {
         navigationController?.popViewController(animated: true)
