@@ -10,6 +10,10 @@ import UIKit
 
 class TweetCell: UICollectionViewCell {
     
+    var tweet: Tweet? {
+        didSet { configure() }
+    }
+    
     private let profileImageView: UIButton = {
         let iv = UIButton()
         iv.contentMode = .scaleAspectFit
@@ -122,5 +126,11 @@ class TweetCell: UICollectionViewCell {
     
     @objc func handleShareTapped() {
         print("share")
+    }
+    
+    func configure() {
+        guard let tweet = tweet else { return }
+        
+        captionLabel.text = tweet.caption
     }
 }
