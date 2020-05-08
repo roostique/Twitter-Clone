@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class MainTabController: UITabBarController {
-
+    
     var user: User? {
         didSet {
             guard let nav = viewControllers?[0] as? UINavigationController else { return }
@@ -67,7 +67,11 @@ class MainTabController: UITabBarController {
     }
     
     @objc func actionButtonTapped() {
-        print("test")
+        guard let user = user else { return }
+        let contoller = PostTweetController(user: user)
+        let nav = UINavigationController(rootViewController: contoller)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true)
     }
     
     func configureUI() {
@@ -83,13 +87,13 @@ class MainTabController: UITabBarController {
         
         let explore = ExploreController()
         let nav2 = templateNavigationController(image: UIImage(named: "search_unselected"), rootViewController: explore)
-
+        
         let notifications = NotificationsController()
         let nav3 = templateNavigationController(image: UIImage(named: "like_unselected"), rootViewController: notifications)
-
+        
         let messages = MessagesController()
         let nav4 = templateNavigationController(image: UIImage(named: "messages_unselected"), rootViewController: messages)
-
+        
         viewControllers = [nav1, nav2, nav3, nav4]
         
     }
@@ -102,6 +106,6 @@ class MainTabController: UITabBarController {
         return nav
         
     }
-
-   
+    
+    
 }
