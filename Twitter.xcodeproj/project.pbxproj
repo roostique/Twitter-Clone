@@ -22,6 +22,8 @@
 		1230FEC8246317D500213363 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1230FEC7246317D500213363 /* SignUpController.swift */; };
 		1230FECA246324B300213363 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1230FEC9246324B300213363 /* Utilities.swift */; };
 		1230FECC2463EFF800213363 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1230FECB2463EFF800213363 /* GoogleService-Info.plist */; };
+		12480D832467297B00782C27 /* ProfileFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12480D822467297B00782C27 /* ProfileFilterView.swift */; };
+		12480D85246733F700782C27 /* ProfileFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12480D84246733F700782C27 /* ProfileFilterCell.swift */; };
 		12512CCD2464246100CF77BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12512CCC2464246100CF77BF /* Constants.swift */; };
 		12512CCF24643AC500CF77BF /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12512CCE24643AC500CF77BF /* AuthService.swift */; };
 		12512CD1246442BB00CF77BF /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12512CD0246442BB00CF77BF /* AuthData.swift */; };
@@ -56,6 +58,8 @@
 		1230FEC7246317D500213363 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		1230FEC9246324B300213363 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		1230FECB2463EFF800213363 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		12480D822467297B00782C27 /* ProfileFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFilterView.swift; sourceTree = "<group>"; };
+		12480D84246733F700782C27 /* ProfileFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFilterCell.swift; sourceTree = "<group>"; };
 		12512CCC2464246100CF77BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		12512CCE24643AC500CF77BF /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		12512CD0246442BB00CF77BF /* AuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 				12E8265024654D8200E9D2B0 /* CaptionTextView.swift */,
 				12E826562465B27A00E9D2B0 /* TweetCell.swift */,
 				127E34512466E00700FB52F4 /* ProfileHeader.swift */,
+				12480D822467297B00782C27 /* ProfileFilterView.swift */,
+				12480D84246733F700782C27 /* ProfileFilterCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -337,12 +343,14 @@
 				12512CD1246442BB00CF77BF /* AuthData.swift in Sources */,
 				12EEF3112464AC190027C2AF /* User.swift in Sources */,
 				12E8265124654D8200E9D2B0 /* CaptionTextView.swift in Sources */,
+				12480D832467297B00782C27 /* ProfileFilterView.swift in Sources */,
 				127E34522466E00700FB52F4 /* ProfileHeader.swift in Sources */,
 				12039EE02461971A00BAD380 /* AppDelegate.swift in Sources */,
 				127E34502466D41200FB52F4 /* ProfileController.swift in Sources */,
 				1230FEBB2461CDCC00213363 /* ExploreController.swift in Sources */,
 				1230FEC6246317C800213363 /* LoginController.swift in Sources */,
 				12E826552465796200E9D2B0 /* Tweet.swift in Sources */,
+				12480D85246733F700782C27 /* ProfileFilterCell.swift in Sources */,
 				127E344E2466A60F00FB52F4 /* TweetViewModel.swift in Sources */,
 				12512CCF24643AC500CF77BF /* AuthService.swift in Sources */,
 				1230FEC8246317D500213363 /* SignUpController.swift in Sources */,
