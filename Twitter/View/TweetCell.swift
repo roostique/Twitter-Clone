@@ -8,24 +8,38 @@
 
 import UIKit
 
+// FeedController & weak var delegate together conform to the protocol bellow, that`s why you can access function from FeedController in TweetCell.
+// Если не добавить ':class' в протокол то delegate не сможет быть weak var
+
+protocol TweetCellDelegate: class {
+    func handleProfileImageTapped()
+}
+
 class TweetCell: UICollectionViewCell {
     
     var tweet: Tweet? {
         didSet { configure() }
     }
     
-    private let profileImageView: UIButton = {
+    weak var delegate: TweetCellDelegate?
+    
+    private lazy var profileImageView: UIButton = {
         let iv = UIButton()
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
         iv.setDimensions(width: 48, height: 48)
         iv.layer.cornerRadius = 48 / 2
         iv.backgroundColor = .twitterBlue
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileImageTapped))
+        iv.addGestureRecognizer(tap)
+        iv.isUserInteractionEnabled = true
+        
         return iv
     }()
     
     private let captionLabel: UILabel = {
-       let lbl = UILabel()
+        let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 14)
         lbl.numberOfLines = 0  // Бесконечное число строк
         lbl.text = "Just some random tweet text"
@@ -112,6 +126,10 @@ class TweetCell: UICollectionViewCell {
     }
     
     // Mark - Selectors
+    @objc func handleProfileImageTapped() {
+        delegate?.handleProfileImageTapped()
+    }
+    
     @objc func handleCommentTapped() {
         print("comment")
     }
