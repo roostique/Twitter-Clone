@@ -23,8 +23,8 @@ class TweetCell: UICollectionViewCell {
     
     weak var delegate: TweetCellDelegate?
     
-    private lazy var profileImageView: UIButton = {
-        let iv = UIButton()
+    private lazy var profileImageView: UIImageView = {
+        let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
         iv.setDimensions(width: 48, height: 48)
@@ -151,7 +151,7 @@ class TweetCell: UICollectionViewCell {
         let viewModel = TweetViewModel(tweet: tweet)
         
         captionLabel.text = tweet.caption
-        profileImageView.sd_setImage(with: viewModel.profileImageUrl, for: .normal, completed: nil)
+        profileImageView.sd_setImage(with: viewModel.profileImageUrl)
         userInfoLabel.attributedText = viewModel.userInfoText
     }
 }
