@@ -12,7 +12,7 @@ import UIKit
 // Если не добавить ':class' в протокол то delegate не сможет быть weak var
 
 protocol TweetCellDelegate: class {
-    func handleProfileImageTapped()
+    func handleProfileImageTapped(_ cell: TweetCell)
 }
 
 class TweetCell: UICollectionViewCell {
@@ -127,7 +127,7 @@ class TweetCell: UICollectionViewCell {
     
     // Mark - Selectors
     @objc func handleProfileImageTapped() {
-        delegate?.handleProfileImageTapped()
+        delegate?.handleProfileImageTapped(self)
     }
     
     @objc func handleCommentTapped() {

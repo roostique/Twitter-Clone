@@ -22,6 +22,7 @@
 		1230FEC8246317D500213363 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1230FEC7246317D500213363 /* SignUpController.swift */; };
 		1230FECA246324B300213363 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1230FEC9246324B300213363 /* Utilities.swift */; };
 		1230FECC2463EFF800213363 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1230FECB2463EFF800213363 /* GoogleService-Info.plist */; };
+		12421109246808E20009650C /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12421108246808E20009650C /* ProfileHeaderViewModel.swift */; };
 		12480D832467297B00782C27 /* ProfileFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12480D822467297B00782C27 /* ProfileFilterView.swift */; };
 		12480D85246733F700782C27 /* ProfileFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12480D84246733F700782C27 /* ProfileFilterCell.swift */; };
 		12512CCD2464246100CF77BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12512CCC2464246100CF77BF /* Constants.swift */; };
@@ -58,6 +59,7 @@
 		1230FEC7246317D500213363 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		1230FEC9246324B300213363 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		1230FECB2463EFF800213363 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		12421108246808E20009650C /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		12480D822467297B00782C27 /* ProfileFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFilterView.swift; sourceTree = "<group>"; };
 		12480D84246733F700782C27 /* ProfileFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFilterCell.swift; sourceTree = "<group>"; };
 		12512CCC2464246100CF77BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				127E344D2466A60F00FB52F4 /* TweetViewModel.swift */,
+				12421108246808E20009650C /* ProfileHeaderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				12480D832467297B00782C27 /* ProfileFilterView.swift in Sources */,
 				127E34522466E00700FB52F4 /* ProfileHeader.swift in Sources */,
 				12039EE02461971A00BAD380 /* AppDelegate.swift in Sources */,
+				12421109246808E20009650C /* ProfileHeaderViewModel.swift in Sources */,
 				127E34502466D41200FB52F4 /* ProfileController.swift in Sources */,
 				1230FEBB2461CDCC00213363 /* ExploreController.swift in Sources */,
 				1230FEC6246317C800213363 /* LoginController.swift in Sources */,

@@ -93,8 +93,9 @@ extension FeedController: UICollectionViewDelegateFlowLayout {
 
 // If controller conforms to certain protocol, it must include functions inside of that protocol.
 extension FeedController: TweetCellDelegate {
-    func handleProfileImageTapped() {
-        let controller = ProfileController(collectionViewLayout: UICollectionViewFlowLayout())
+    func handleProfileImageTapped(_ cell: TweetCell) {
+        guard let user = cell.tweet?.user else { return }
+        let controller = ProfileController(user: user)
         navigationController?.pushViewController(controller, animated: true)
     }
     
