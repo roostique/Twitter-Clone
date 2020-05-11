@@ -20,7 +20,13 @@ struct TweetService {
                       "retweets": 0,
                       "caption": caption] as [String : Any]
         
-        REF_TWEETS.childByAutoId().updateChildValues(values, withCompletionBlock: completion)
+        let ref = REF_TWEETS.childByAutoId()  // Creates tweet unique identifiers in 'tweets' Firebase structure
+        
+        ref.updateChildValues(values) { (err, ref) in
+            // Update(i.e. adding new data) user-tweet structure after tweet upload completed
+            guard let tweetID = ref.key else { return }
+            REF_USER_TWEETS.child(uid).updateChildValues([tweetID: 1], withCompletionBlock: completion)
+        }
         
     }
     
