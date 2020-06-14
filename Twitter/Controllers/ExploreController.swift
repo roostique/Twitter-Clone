@@ -8,9 +8,14 @@
 
 import UIKit
 
-class ExploreController: UIViewController {
+private let reuseIdentifier = "UserCell"
+
+class ExploreController: UITableViewController {
     
     // MARK: - properties
+    private var users = [User]() {
+        didSet { tableView.reloadData() }
+    }
     
     // MARK: - lifecycle
     
@@ -18,7 +23,14 @@ class ExploreController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        fetchUsers()
         
+    }
+    
+    func fetchUsers() {
+        UserService.shared.fetchUsers { users in
+            self.users = users
+        }
     }
     
     // MARK: - helpers
@@ -27,7 +39,25 @@ class ExploreController: UIViewController {
         view.backgroundColor = .white
         navigationItem.title = "Explore"
 
-        
+        tableView.register(UserCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.separatorStyle = .none
+        tableView.rowHeight = 60
     }
     
+}
+
+
+
+
+
+extension ExploreController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! UserCell
+        cell.user = users[indexPath.row]
+        return cell
+    }
 }
