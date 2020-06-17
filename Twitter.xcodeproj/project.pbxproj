@@ -21,7 +21,6 @@
 		1230FEC6246317C800213363 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1230FEC5246317C800213363 /* LoginController.swift */; };
 		1230FEC8246317D500213363 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1230FEC7246317D500213363 /* SignUpController.swift */; };
 		1230FECA246324B300213363 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1230FEC9246324B300213363 /* Utilities.swift */; };
-		1230FECC2463EFF800213363 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1230FECB2463EFF800213363 /* GoogleService-Info.plist */; };
 		12421109246808E20009650C /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12421108246808E20009650C /* ProfileHeaderViewModel.swift */; };
 		12480D832467297B00782C27 /* ProfileFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12480D822467297B00782C27 /* ProfileFilterView.swift */; };
 		12480D85246733F700782C27 /* ProfileFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12480D84246733F700782C27 /* ProfileFilterCell.swift */; };
@@ -39,6 +38,7 @@
 		12E826572465B27A00E9D2B0 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E826562465B27A00E9D2B0 /* TweetCell.swift */; };
 		12EEF30F24649FC10027C2AF /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EEF30E24649FC10027C2AF /* UserService.swift */; };
 		12EEF3112464AC190027C2AF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EEF3102464AC190027C2AF /* User.swift */; };
+		12F135052497B39F005F6521 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12F135042497B39F005F6521 /* GoogleService-Info.plist */; };
 		44F7A4E51F908E6E735B8600 /* Pods_Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD955DE018903505FD924CB /* Pods_Twitter.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +59,6 @@
 		1230FEC5246317C800213363 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		1230FEC7246317D500213363 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		1230FEC9246324B300213363 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		1230FECB2463EFF800213363 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		12421108246808E20009650C /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		12480D822467297B00782C27 /* ProfileFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFilterView.swift; sourceTree = "<group>"; };
 		12480D84246733F700782C27 /* ProfileFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFilterCell.swift; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		12E826562465B27A00E9D2B0 /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		12EEF30E24649FC10027C2AF /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		12EEF3102464AC190027C2AF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		12F135042497B39F005F6521 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9FD955DE018903505FD924CB /* Pods_Twitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5DA9FF055D50F4C0F0E6B1 /* Pods-Twitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.debug.xcconfig"; path = "Target Support Files/Pods-Twitter/Pods-Twitter.debug.xcconfig"; sourceTree = "<group>"; };
 		D9D2D0D5B72D49D5AF1F2CE1 /* Pods-Twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.release.xcconfig"; path = "Target Support Files/Pods-Twitter/Pods-Twitter.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 				12039EE82461971C00BAD380 /* Assets.xcassets */,
 				12039EEA2461971C00BAD380 /* LaunchScreen.storyboard */,
 				12039EED2461971C00BAD380 /* Info.plist */,
-				1230FECB2463EFF800213363 /* GoogleService-Info.plist */,
+				12F135042497B39F005F6521 /* GoogleService-Info.plist */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
@@ -286,7 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12039EEC2461971C00BAD380 /* LaunchScreen.storyboard in Resources */,
-				1230FECC2463EFF800213363 /* GoogleService-Info.plist in Resources */,
+				12F135052497B39F005F6521 /* GoogleService-Info.plist in Resources */,
 				12039EE92461971C00BAD380 /* Assets.xcassets in Resources */,
 				12039EE72461971A00BAD380 /* Main.storyboard in Resources */,
 			);
