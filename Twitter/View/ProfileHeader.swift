@@ -10,6 +10,7 @@ import UIKit
 
 protocol ProfileHeaderDelegate: class {
     func handleDismiss()
+    func handleEditProfileFollow(_ header: ProfileHeader)
 }
 
 class ProfileHeader: UICollectionReusableView {
@@ -58,7 +59,7 @@ class ProfileHeader: UICollectionReusableView {
         btn.layer.borderWidth = 1.3
         btn.setTitleColor(.twitterBlue, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        btn.addTarget(self, action: #selector(handleEditFollow), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(handleEditProfileFollow), for: .touchUpInside)
         return btn
     }()
     
@@ -164,8 +165,8 @@ class ProfileHeader: UICollectionReusableView {
         delegate?.handleDismiss()
     }
     
-    @objc func handleEditFollow() {
-        print("Edit")
+    @objc func handleEditProfileFollow() {
+        delegate?.handleEditProfileFollow(self)
     }
     
     @objc func handleFollowingTapped() {
