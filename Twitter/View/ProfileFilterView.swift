@@ -59,7 +59,7 @@ extension ProfileFilterView: UICollectionViewDataSource {
         
         let option = ProfileFilterOptions(rawValue: indexPath.row)
         cell.option = option
-        print("DEBUG: Option is \(option?.description)")
+        //print("DEBUG: Option is \(option?.description)")
         
         return cell
     }
