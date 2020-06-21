@@ -72,4 +72,14 @@ struct TweetViewModel {
         return attributedTitle
     }
     
+    func size(forWidth width: CGFloat) -> CGSize {
+        let measurmentLabel = UILabel()
+        measurmentLabel.text = tweet.caption
+        measurmentLabel.numberOfLines = 0
+        measurmentLabel.lineBreakMode = .byWordWrapping
+        measurmentLabel.translatesAutoresizingMaskIntoConstraints = false
+        measurmentLabel.widthAnchor.constraint(equalToConstant: width).isActive = true
+        return measurmentLabel.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+    }
+    
 }
