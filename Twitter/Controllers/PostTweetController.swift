@@ -11,8 +11,10 @@ import UIKit
 class PostTweetController: UIViewController {
     
     private let user: User
+    private let config: PostTweetConfiguration
+    private lazy var viewModel = PostTweetViewModel(config: config)
     
-    private lazy var postTweetButton: UIButton = {
+    private lazy var actionButton: UIButton = {
         let btn = UIButton()
         btn.backgroundColor = .twitterBlue
         btn.setTitle("Tweet", for: .normal)
@@ -37,11 +39,21 @@ class PostTweetController: UIViewController {
         return iv
     }()
     
+    private lazy var replyLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "Replying to @jcolenc"
+        lbl.font = UIFont.systemFont(ofSize: 14)
+        lbl.textColor = .lightGray
+        lbl.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+        return lbl
+    }()
+    
     private let captionTextView = CaptionTextView()
     
     // Позволяет не делать повторный API запрос и использовать данные,которые уже есть в main tab
-    init(user: User) {
+    init(user: User, config: PostTweetConfiguration) {
         self.user = user
+        self.config = config
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -53,7 +65,12 @@ class PostTweetController: UIViewController {
         super.viewDidLoad()
         configureUI()
         
-        print("DEBUG: User is \(user.username)")
+        switch config {
+        case .tweet:
+            print("DEBUG: Tweet controller")
+        case .reply(let tweet):
+            print("DEBUG: replying to \(tweet.caption)")
+        }
     }
     
     @objc func handleCancel() {
@@ -77,17 +94,27 @@ class PostTweetController: UIViewController {
         view.backgroundColor = .white
         configureNavigationBar()
         
-        let stack = UIStackView(arrangedSubviews: [profileImageView, captionTextView])
-        stack.axis = .horizontal
-        stack.spacing = 12
-        stack.alignment = .leading
+        let imageCaptionStack = UIStackView(arrangedSubviews: [profileImageView, captionTextView])
+        imageCaptionStack.axis = .horizontal
+        imageCaptionStack.spacing = 12
+        imageCaptionStack.alignment = .leading
         
+        let stack = UIStackView(arrangedSubviews: [replyLabel, imageCaptionStack])
+        stack.axis = .vertical
+        stack.spacing = 12
+            
         view.addSubview(stack)
         stack.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor,right: view.rightAnchor,
                      paddingTop: 16, paddingLeft: 16, paddingRight: 16)
         
         profileImageView.sd_setImage(with: user.profileImageUrl, for: .normal, completed: nil)
         
+        actionButton.setTitle(viewModel.actionButtonTitle, for: .normal)
+        captionTextView.placeholderLabel.text = viewModel.placeholderText
+        
+        replyLabel.isHidden = !viewModel.shouldShowReplyLabel
+        guard let replyText = viewModel.replyText else { return }
+        replyLabel.text = replyText
     }
     
     func configureNavigationBar() {
@@ -95,6 +122,6 @@ class PostTweetController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: postTweetButton)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: actionButton)
     }
 }
