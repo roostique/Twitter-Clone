@@ -10,6 +10,10 @@ import UIKit
 
 class TweetHeader: UICollectionReusableView {
     
+    var tweet: Tweet? {
+        didSet { configure() }
+    }
+    
     private lazy var profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -65,19 +69,8 @@ class TweetHeader: UICollectionReusableView {
         return btn
     }()
     
-    private lazy var retweetsLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.font = UIFont.systemFont(ofSize: 14)
-        lbl.text = "0 Retweets"
-        return lbl
-    }()
-    
-    private lazy var likesLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.font = UIFont.systemFont(ofSize: 14)
-        lbl.text = "0 Likes"
-        return lbl
-    }()
+    private lazy var retweetsLabel = UILabel()
+    private lazy var likesLabel = UILabel()
     
     private lazy var statsView: UIView = {
         let view = UIView()
@@ -196,6 +189,20 @@ class TweetHeader: UICollectionReusableView {
     
     @objc func handleShareTapped() {
         print("DEBUG: share tapped")
+    }
+    
+    func configure() {
+        guard let tweet = tweet else { return }
+        
+        let viewModel = TweetViewModel(tweet: tweet)
+        
+        profileImageView.sd_setImage(with: viewModel.profileImageUrl)
+        fullnameLabel.text = tweet.user.fullname
+        usernameLabel.text = viewModel.usernameText
+        captionLabel.text = tweet.caption
+        dateLabel.text = viewModel.headerTimestamp
+        retweetsLabel.attributedText = viewModel.retweetsAttributedString
+        likesLabel.attributedText = viewModel.likesAttributedString
     }
     
     func createButton(withImageName imageName: String) -> UIButton {
