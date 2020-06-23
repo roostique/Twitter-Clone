@@ -79,7 +79,7 @@ class PostTweetController: UIViewController {
     
     @objc func handlePostTweet() {
         guard let caption = captionTextView.text else { return }
-        TweetService.shared.uploadTweet(caption: caption) { (error, ref) in
+        TweetService.shared.uploadTweet(caption: caption, type: config) { (error, ref) in
             if let error = error {
                 print("DEBUG: Failed to post tweet with \(error.localizedDescription)")
                 return
